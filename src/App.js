@@ -14,7 +14,7 @@ function App() {
   const [loading, setLoading] = React.useState(true)
   
    useEffect(() =>{
-      fetch('https://jsonplaceholder.typicode.com/todos?_limit=15')
+      fetch('https://jsonplaceholder.typicode.com/todos?_limit=69')
         .then(response => response.json())
         .then(todos => {
           setTimeout(() => {
@@ -54,13 +54,10 @@ function App() {
     <AddTodo onCreate={addTodo} />
 
     { loading && <Loader />}
-    {todos.length ? 
-    (<TodoList todos={todos} onToggle={toggleTodo} /> )
-    :  (
-      loading ? null : (
-        <p>No Tasks</p>
-      )
-    )}
+    {
+    todos.length ? (<TodoList todos={todos} onToggle={toggleTodo} /> )
+    : (loading ? null : (<p>No Tasks</p>))
+    }
     
   </div>
   
