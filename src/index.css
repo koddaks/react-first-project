@@ -26,5 +26,6 @@ width: 600px;
 }
 
 .done {
+  color: red;
   text-decoration: line-through;
 }
